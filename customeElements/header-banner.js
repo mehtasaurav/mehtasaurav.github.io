@@ -1,0 +1,32 @@
+
+  import { applyDesktopStyle } from '../stylings/desktopStyling.js';
+  import { applyMobileStyle } from '../stylings/mobileStyling.js';
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  function applyDesktopStyling() {
+    console.log("Desktop Detected");
+    applyDesktopStyle();
+  }
+
+  function applyMobileStyling() {
+    console.log("Mobile Detected");
+    applyMobileStyle()
+  }
+  // Detect whether the user is on mobile or desktop
+  if (window.outerWidth <= 380) {
+    // If the screen width is 767px or less, assume it's a mobile device
+    applyMobileStyling();
+  } else {
+    // Otherwise, assume it's a desktop device
+    applyDesktopStyling();
+  }
+  // Optional: Add an event listener to handle screen resizing
+  window.addEventListener('resize', () => {
+    if (window.outerWidth <= 380) {
+      applyMobileStyling();
+    } else {
+      applyDesktopStyling();
+    }
+  });
+});

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="module" src="./customeElements/header-banner.js"></script>
+	<style>
+      @media (max-width: 600px) {
+
+	   background-image {
+        height: 40vh; /* Increase the height of the banner for small screens */
+      }
+
+      background-image img {
+        width: 40vw; 
+        height: 40vw; 
+        bottom: -20vw;
+      }
+    }
+	</style>
+</head>
+
+<body>
+  <header>
+    <background-image
+	bg-color="#293f69a6"
+	include-picture="demo.jpeg"
+	name = "Saurav Mehta"
+	designation = "Associate Developer"
+	company = "SAP Labs India"
+	phone = "+91 8618609502"
+	email = "Sauravmehta818@gmail.com"
+	address = "Doddanekundi, Bengaluru">
+	</background-image>
+  </header>
+</body>
+</html>
