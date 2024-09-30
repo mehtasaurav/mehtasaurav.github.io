@@ -129,3 +129,35 @@ export function applyDesktopStyle() {
         customElements.define('background-image', BackgroundImage);
     }
 }
+
+
+export function applyDesktopStyleLowerHeader() {
+    if (!customElements.get('lower-header')) {
+        class LowerHeader extends HTMLElement {
+            connectedCallback() {
+                const about = this.getAttribute('about') || 'Add a description about yourself.';
+                const aboutDiv = document.createElement('div');
+                aboutDiv.style.padding = '20px';                  // Padding inside the div
+                aboutDiv.style.position = 'absolute';              // Position it relative to parent
+                aboutDiv.style.top = '35vh';                     // Distance from the top
+                aboutDiv.style.left = '0';                        // Align to the left
+                aboutDiv.style.right = '0';                       // Align to the right
+                aboutDiv.style.boxSizing = 'border-box';          // Include padding in width calculations
+                aboutDiv.style.maxWidth = '100vw';                // Don't exceed viewport width
+                aboutDiv.style.fontSize = '16px';                 // Responsive font size
+                aboutDiv.style.color = '#333';                    // Text color
+                aboutDiv.style.margin = '0 10px';                 // Margin on left and right for spacing
+                aboutDiv.style.whiteSpace = 'normal';              // Ensure text wraps normally
+                
+                const aboutText = document.createElement('p');
+                aboutText.textContent = about;
+                aboutText.style.fontSize = '18px';
+                aboutText.style.color = '#333';
+                aboutDiv.appendChild(aboutText);
+                this.appendChild(aboutDiv);
+
+            }
+        }
+        customElements.define('lower-header', LowerHeader);
+    }
+}

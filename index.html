@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script type="module" src="./customeElements/header-banner.js"></script>
-	<style>
-      @media (max-width: 600px) {
 
-	   background-image {
-        height: 40vh; /* Increase the height of the banner for small screens */
+<head>
+  <script type="module" src="./customeElements/main.js"></script>
+  <style>
+    @media (max-width: 600px) {
+      background-image {
+        height: 40vh;
+        /* Increase the height of the banner for small screens */
       }
 
       background-image img {
-        width: 40vw; 
-        height: 40vw; 
+        width: 40vw;
+        height: 40vw;
         bottom: -20vw;
       }
     }
-	</style>
+  </style>
 </head>
 
 <body>
   <header>
-    <background-image
-	bg-color="#293f69a6"
-	include-picture="./resources/demo.jpeg"
-	name = "Saurav Mehta"
-	designation = "Associate Developer"
-	company = "SAP Labs India"
-	phone = "+91 8618609502"
-	email = "Sauravmehta818@gmail.com"
-	address = "Doddanekundi, Bengaluru">
-	</background-image>
+    <background-image bg-color="#293f69a6" include-picture="./resources/demo.jpeg" name="Saurav Mehta"
+      designation="Associate Developer" company="SAP Labs India" phone="+91 8618609502" email="Sauravmehta818@gmail.com"
+      address="Doddanekundi, Bengaluru">
+    </background-image>
   </header>
+
+  <lower-header 
+    about="As an Associate Developer at SAP, I bring a strong foundation in software development with a focus on creating efficient and scalable solutions. My journey in programming started with a passion for technology, which has grown into a professional career where I continuously strive to enhance my skills and contribute to impactful projects.
+
+    I am proud to have earned a 5-Star rating on HackerRank and to have solved 500+ problems on LeetCode, which reflects my dedication to mastering algorithms and data structures. These achievements underscore my commitment to continuous learning and my enthusiasm for tackling complex challenges.
+    
+    Proficient in Node.js and Java, I enjoy building applications that are both robust and user-friendly. My interest in Machine Learning and Cloud Computing drives me to explore new technologies and stay updated with the latest industry trends.
+    
+    I am a lifelong learner and a tech explorer, always eager to expand my knowledge and skills. I thrive in dynamic environments where I can collaborate with like-minded professionals to solve problems and innovate. My goal is to leverage my technical skills and passion for technology to make meaningful contributions to the world of software development.">
+  </lower-header>
 </body>
+
 </html>
