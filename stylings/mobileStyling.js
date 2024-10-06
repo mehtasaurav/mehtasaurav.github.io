@@ -62,6 +62,48 @@ export function applyMobileStyle() {
         nameElement.style.fontSize = "40px"; // Set font size for the name
         textContainer.appendChild(nameElement);
 
+        // Logos container
+        const logosContainer = document.createElement("div");
+        logosContainer.style.display = "flex"; // Display logos horizontally
+        logosContainer.style.justifyContent = "flex-end"; // Align logos to the right
+        logosContainer.style.marginTop = "10px"; // Add some space between name and logos
+        textContainer.appendChild(logosContainer);
+
+        // Add logos
+        const logos = [
+          {
+            src: "./stylings/1.jpeg",
+            alt: "Logo 1",
+            link: "https://www.hackerrank.com/profile/Sauravmehta818",
+          },
+          {
+            src: "./stylings/2.jpeg",
+            alt: "Logo 2",
+            link: "https://leetcode.com/u/Sauravmehta/",
+          },
+          {
+            src: "./stylings/ll.jpg",
+            alt: "Logo 3",
+            link: "https://www.linkedin.com/in/mehtasaurav/",
+          },
+        ];
+
+        logos.forEach((logo) => {
+          const logoElement = document.createElement("img");
+          logoElement.src = logo.src;
+          logoElement.alt = logo.alt;
+          logoElement.style.width = "30px"; // Set logo width
+          logoElement.style.height = "30px";
+          logoElement.style.marginLeft = "10px"; // Add space between logos
+
+          const logoLink = document.createElement("a");
+          logoLink.href = logo.link;
+          logoLink.target = "_blank";
+          logoLink.rel = "noopener noreferrer";
+
+          logoLink.appendChild(logoElement);
+          logosContainer.appendChild(logoLink);
+        });
         // Designation
         const designationElement = document.createElement("p");
         designationElement.textContent = designation;
